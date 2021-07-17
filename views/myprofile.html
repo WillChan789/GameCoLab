@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Game Colab - Profile</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="../ui/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../ui/css/mdb.min.css" rel="stylesheet">
+    <link href="../ui/css/dashstyle.min.css" rel="stylesheet">
+    <style>
+        .profile-head {
+            transform: translateY(5rem)
+        }
+
+        a {
+            color: black;
+        }
+
+        .cover {
+            background-image: url(../ui/img/profileback.webp);
+            background-size: cover;
+            background-repeat: no-repeat
+        }
+
+        .mainprofile {}
+
+        .listbox-area {
+            padding: 0px 0px 0px 20px;
+        }
+
+        [role="listbox"] {
+            margin: 0px;
+            padding: 0px;
+            min-height: 10em;
+
+        }
+
+        [role="listbox"].ss_elem_list {
+            position: relative;
+            max-height: 10em;
+            overflow-y: auto;
+
+        }
+
+
+        @mixin label-active() {
+            font-size: 0.75rem;
+            transform: translateY(-14px);
+        }
+
+
+        .form-field__control {
+            background: #eee;
+            border-radius: 8px 8px 0 0;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+
+        }
+
+        .form-field__textarea {
+            appearance: none;
+            background: transparent;
+            border: 0;
+            border-bottom: 1px solid #999;
+            color: #333;
+            display: block;
+            font-size: 1.2rem;
+            margin-top: 24px;
+            outline: 0;
+            padding: 0 12px 10px 12px;
+            width: 100%;
+        }
+
+        .form-field__textarea {
+            height: 150px;
+        }
+
+        .page-footer {
+            position: relative;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .avatarimg {
+            max-width: 150px;
+        }
+    </style>
+</head>
+
+<body class="grey lighten-3">
+
+    <!--Main Navigation-->
+    <header>
+
+        <!-- Navbar -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+            <div class="container-fluid">
+
+                <!-- Brand -->
+                <a class="navbar-brand waves-effect" href="https://gcl-database.herokuapp.com">
+                    <strong>Game CoLab</strong>
+                </a>
+
+                <!-- Collapse -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Links -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <!-- Left -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <!-- Left -->
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://gcl-database.herokuapp.com">Home
+                                    <!-- <span class="sr-only">(current)</span> -->
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://gcl-database.herokuapp.com/browse">Browse</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="https://gcl-database.herokuapp.com/profile/">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://gcl-database.herokuapp.com/editor">Editor</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://gcl-database.herokuapp.com/upload">Upload</a>
+                            </li>
+                        </ul>
+
+                        <!-- Right -->
+                        <ul class="navbar-nav nav-flex-icons">
+
+                            <li class="nav-item">
+                                <a id="jsnavlogin" href="https://gcl-database.herokuapp.com/login" class="nav-link border border-light rounded">
+                                    <i class="fas fa-sign-in-alt mr-2"></i>Login/Register
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+        </nav>
+        <!-- Navbar -->
+
+        <!-- Sidebar -->
+        <div class="sidebar-fixed position-fixed">
+
+            <a class="logo-wrapper waves-effect">
+                <img src="../ui/img/placeholder.png" class="img-fluid" alt="">
+            </a>
+
+            <div class="list-group list-group-flush">
+                <a href="https://gcl-database.herokuapp.com/profile/" class="list-group-item active waves-effect">
+                    <i class="fas fa-user mr-3"></i>Profile
+                </a>
+                <a href="https://gcl-database.herokuapp.com/profile/purchases" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fas fa-money-check-alt mr-3"></i>Purchases</a>
+                <a href="https://gcl-database.herokuapp.com/profile/messages" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fas fa-comments mr-3"></i>Messages</a>
+                <a href="https://gcl-database.herokuapp.com/profile/settings" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fas fa-sliders-h mr-3"></i>Settings</a>
+
+            </div>
+
+        </div>
+        <!-- Sidebar -->
+
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <main class="pt-5 mx-lg-5">
+        <div class="container-fluid mt-5">
+
+
+
+            <!--Grid row-->
+            <div class="row wow fadeIn">
+
+                <!--Grid column-->
+                <div class="col-md-9 mb-4">
+
+                    <!--Card-->
+                    <div class="card">
+
+                        <!--Card content-->
+                        <div class="card-body">
+
+                            <!--mainprofile-->
+                            <div class="mainprofile">
+                                <div>
+                                    <!-- Profile widget -->
+                                    <div class="bg-white shadow rounded overflow-hidden">
+                                        <div class="px-4 pt-0 pb-4 cover">
+                                            <div class="media align-items-end profile-head">
+                                                <div class="profile mr-3"><img src="../ui/img/placeholder.png" alt="..." width="130" class="rounded mb-2 img-thumbnail avatarimg">
+                                                    <p id="jscurrentpoints">0 Points</p>
+                                                </div>
+                                                <div class="media-body mb-5 text-white">
+                                                    <h4 id="jsnamehere" class="mt-0 mb-0">"name here"</h4>
+                                                    <p class="small mb-4 avatarp"> <i class="fas fa-desktop mr-2"></i>game dev</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-light p-4 d-flex justify-content-end text-center">
+                                            <ul class="list-inline mb-0">
+                                                <li class="list-inline-item">
+                                                    <h5 id="jspostcount" class="font-weight-bold mb-0 d-block">0</h5><small class="text-muted"> <i class="fas fa-upload mr-1"></i>Posts</small>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <h5 id="jsfollowersgcount" class="font-weight-bold mb-0 d-block">0</h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>Followers</small>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <h5 id="jsfollowingcount" class="font-weight-bold mb-0 d-block">0</h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>Following</small>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="px-4 py-3">
+                                            <h5 class="mb-0">About<button type="button" class="btn btn-primary btn-sm" id="editabout">edit</button></h5>
+                                            <div class="p-4 rounded shadow-sm bg-light">
+                                                <p id="jsuserdesc" class="font-italic mb-0"></p>
+
+                                                <div class="form-field__control" id="editaboutbox">
+                                                    <textarea class="form-field__textarea" id="editabouttext"></textarea>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!--mainprofile-->
+
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-3 mb-4">
+
+                    <!--Card-->
+                    <div class="card mb-4">
+
+                        <!-- Card header -->
+                        <div class="card-header text-center">
+                            Following
+                        </div>
+
+                        <!--Card content-->
+                        <div class="card-body listbox-area">
+                            <ul id="jsfollowinglist" class="ss_elem_list" tabindex="0" role="listbox">
+
+
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+
+                    <!--Card-->
+                    <div class="card mb-4">
+
+                        <!-- Card header -->
+                        <div class="card-header text-center">
+                            Followers
+                        </div>
+
+                        <!--Card content-->
+                        <div class="card-body listbox-area">
+                            <ul id="jsfollowerlist" class="ss_elem_list" tabindex="0" role="listbox">
+
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+
+            <!--Grid row-->
+            <div class="row wow fadeIn">
+
+                <!--Grid column-->
+                <div class="col-lg-6 col-md-6 mb-4">
+
+                    <!--Card-->
+                    <div class="card">
+
+                        <!-- Card header -->
+                        <div class="card-header">"following" posted "asset name"</div>
+
+                        <!--Card content-->
+                        <div class="card-body">
+
+                            <p> WIP, this where you would see posts made by the people your following </p>
+                            <br> <br> <br>
+
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-6 col-md-6 mb-4">
+
+                    <!--Card-->
+                    <div class="card">
+
+                        <!-- Card header -->
+                        <div class="card-header">"following" posted "asset name"</div>
+
+                        <!--Card content-->
+                        <div class="card-body">
+
+                            <p> WIP</p>
+                            <br> <br> <br>
+
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-6 col-md-6 mb-4">
+
+                    <!--Card-->
+                    <div class="card">
+
+                        <!-- Card header -->
+                        <div class="card-header">"following" posted "asset name"</div>
+
+                        <!--Card content-->
+                        <div class="card-body">
+
+                            <p> WIP</p>
+                            <br> <br> <br>
+
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-6 col-md-6 mb-4">
+
+                    <!--Card-->
+                    <div class="card">
+
+                        <!-- Card header -->
+                        <div class="card-header">"following" posted "asset name"</div>
+
+                        <!--Card content-->
+                        <div class="card-body">
+
+                            <p> WIP</p>
+                            <br> <br> <br>
+
+                        </div>
+                    </div>
+                    <!--/.Card-->
+
+                </div>
+                <!--Grid column-->
+
+
+
+            </div>
+
+
+    </main>
+    <!--Main layout-->
+
+    <!--Footer-->
+    <footer class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">
+        <div class="pt-4">
+            <p>
+                <strong></strong>
+            </p>
+        </div>
+
+        <hr class="my-4">
+
+
+        <div class="pb-4">
+            <p>
+                <strong>2021 © DBChase</strong>
+            </p>
+        </div>
+
+
+    </footer>
+    <!--/.Footer-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="../ui/js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="../ui/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="../ui/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../ui/js/mdb.min.js"></script>
+    <!-- Initializations -->
+    <script type="text/javascript" src="../scripts/checklogin.js"></script>
+    <script type="text/javascript" src="../scripts/myprofile.js"></script>
+
+    <script type="text/javascript">
+        // Animations initialization
+        new WOW().init();
+    </script>
+
+
+</body>
+
+</html>

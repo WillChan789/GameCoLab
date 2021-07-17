@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link href="../ui/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../ui/css/mdb.min.css" rel="stylesheet">
+    <link href="../ui/css/style.min.css" rel="stylesheet">
+    <style type="text/css">
+        html,
+        body,
+        header,
+        .view {
+            height: 100%;
+        }
+
+        @media (max-width: 740px) {
+
+            html,
+            body,
+            header,
+            .view {
+                height: 1000px;
+            }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+
+            html,
+            body,
+            header,
+            .view {
+                height: 650px;
+            }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #1C2331 !important;
+            }
+        }
+    </style>
+    <title>Game CoLab Login</title>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+        <div class="container">
+
+            <!-- Brand -->
+            <a class="navbar-brand" href="https://gcl-database.herokuapp.com/">
+                <strong>Game CoLab</strong>
+            </a>
+
+            <!-- Collapse -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- Left -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home
+                            <!-- <span class="sr-only">(current)</span> -->
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://gcl-database.herokuapp.com/browse">Browse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://gcl-database.herokuapp.com/profile/">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://gcl-database.herokuapp.com/editor">Editor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://gcl-database.herokuapp.com/upload">Upload</a>
+                    </li>
+                </ul>
+
+                <!-- Right -->
+                <ul class="navbar-nav nav-flex-icons">
+
+                    <li class="nav-item active">
+                        <a id="jsnavlogin" href="https://gcl-database.herokuapp.com/login" class="nav-link border border-light rounded">
+                            <i class="fas fa-sign-in-alt mr-2"></i>Login/Register
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+
+    <div class="view full-page-intro" style="background-image: url('../ui/img/2138011.png'); background-repeat: no-repeat; background-size: cover;">
+
+
+        <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            <!-- Content -->
+            <div class="container">
+
+                <!--Grid row-->
+                <div class="row wow fadeIn">
+
+                    <!--Grid column-->
+                    <div class="col-md-6 mb-4 white-text text-center text-md-left">
+
+                        <h1 class="display-4 font-weight-bold">Login/Register to Game CoLab</h1>
+
+                        <hr class="hr-light">
+
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6 col-xl-5 mb-4">
+
+                        <!--Card-->
+                        <div class="card">
+
+                            <!--Card content-->
+                            <div class="card-body">
+
+                                <!-- Form -->
+                                <form name="">
+                                    <!-- Heading -->
+                                    <h3 class="dark-grey-text text-center">
+                                        <strong id="jslogstatus">Login/Register</strong>
+                                    </h3>
+                                    <hr>
+
+                                    <div class="md-form hideiflog">
+                                        <i class="fas fa-user prefix grey-text"></i>
+                                        <input type="text" id="username" class="form-control" autocomplete="off">
+                                        <label for="form3">Username</label>
+                                    </div>
+                                    <div class="md-form hideiflog">
+                                        <i class="fas fa-key prefix grey-text"></i>
+                                        <input type="password" id="password" class="form-control" autocomplete="off">
+                                        <label for="form2">Password</label>
+                                    </div>
+
+
+                                    <div class="text-center">
+                                        <button class="btn btn-indigo login" type="button">Login</button>
+                                        <button class="btn btn-indigo register hideiflog" type="button">Register</button>
+
+                                        <hr>
+                                    </div>
+
+                                </form>
+                                <!-- Form -->
+
+                            </div>
+
+                        </div>
+                        <!--/.Card-->
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+            </div>
+            <!-- Content -->
+
+        </div>
+
+
+    </div>
+
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="../ui/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../ui/js/popper.min.js"></script>
+    <script type="text/javascript" src="../ui/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../ui/js/mdb.min.js"></script>
+    <!-- Initializations -->
+    <script type="text/javascript" src="../scripts/checklogin.js"></script>
+    <script type="text/javascript" src="../scripts/login.js"></script>
+    <script type="text/javascript">
+        // Animations initialization
+        new WOW().init();
+    </script>
+
+</body>
+
+</html>

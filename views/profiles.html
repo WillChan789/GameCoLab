@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Game CoLab - Profile</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="../ui/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../ui/css/mdb.min.css" rel="stylesheet">
+    <link href="../ui/css/style.min.css" rel="stylesheet">
+    <style>
+        html,
+        body,
+        .view {
+            height: 100%;
+        }
+
+        @media (max-width: 740px) {
+
+            html,
+            body,
+            header,
+            .view {
+                height: 1000px;
+            }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+
+            html,
+            body,
+            header,
+            .view {
+                height: 650px;
+            }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #1C2331 !important;
+            }
+        }
+
+        .profile-head {
+            transform: translateY(5rem)
+        }
+
+        .cover {
+            background-image: url(../ui/img/profileback.webp);
+            background-size: cover;
+            background-repeat: no-repeat
+        }
+
+        .mainprofile {}
+
+        .page-footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .card-body {
+            height: 100%;
+        }
+
+        .item-name {
+            padding-left: 2vh;
+        }
+
+        .avatarimg {
+            max-width: 150px;
+        }
+    </style>
+</head>
+
+<body class="grey lighten-3">
+
+    <!--Main Navigation-->
+    <header>
+
+        <!-- Navbar -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+            <div class="container-fluid">
+
+                <!-- Brand -->
+                <a class="navbar-brand waves-effect" href="https://gcl-database.herokuapp.com">
+                    <strong>Game CoLab</strong>
+                </a>
+
+                <!-- Collapse -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Links -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <!-- Left -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <!-- Left -->
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://gcl-database.herokuapp.com">Home
+                                    <!-- <span class="sr-only">(current)</span> -->
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://gcl-database.herokuapp.com/browse">Browse</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="https://gcl-database.herokuapp.com/profile/">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://gcl-database.herokuapp.com/editor">Editor</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://gcl-database.herokuapp.com/upload">Upload</a>
+                            </li>
+                        </ul>
+
+                        <!-- Right -->
+                        <ul class="navbar-nav nav-flex-icons">
+
+                            <li class="nav-item">
+                                <a id="jsnavlogin" href="https://gcl-database.herokuapp.com/login" class="nav-link border border-light rounded">
+                                    <i class="fas fa-sign-in-alt mr-2"></i>Login/Register
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+        </nav>
+        <!-- Navbar -->
+
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <main class="pt-5 mx-lg-5">
+        <div class="container-fluid mt-5">
+
+
+
+            <!--Grid row-->
+            <div class="row wow fadeIn">
+
+                <!--Grid column-->
+                <div class="col-md-12 mb-4">
+
+                    <!--Card-->
+                    <div class="card">
+
+                        <!--Card content-->
+                        <div class="card-body">
+
+                            <!--mainprofile-->
+                            <div class="mainprofile">
+                                <div>
+                                    <!-- Profile widget -->
+                                    <div class="bg-white shadow rounded overflow-hidden">
+                                        <div class="px-4 pt-0 pb-4 cover">
+                                            <div class="media align-items-end profile-head">
+                                                <div class="profile mr-3"><img src="../ui/img/placeholder.png" alt="..." width="250" class="rounded mb-2 img-thumbnail avatarimg">
+                                                </div>
+                                                <div class="media-body mb-5 text-white">
+                                                    <h4 id="jsnamehere" class="mt-0 mb-0">"name here"</h4>
+                                                    <p class="small mb-4 avatarp"> <i class="fas fa-desktop mr-2"></i>game dev</p>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="bg-light p-4 d-flex justify-content-end text-center">
+                                            <ul class="list-inline mb-0">
+                                                <li class="list-inline-item">
+                                                    <h5 id="jspostcount" class="font-weight-bold mb-0 d-block">0</h5><small class="text-muted"> <i class="fas fa-upload mr-1"></i>Posts</small>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <h5 id="jsfollowersgcount" class="font-weight-bold mb-0 d-block">0</h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>Followers</small>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <h5 id="jsfollowingcount" class="font-weight-bold mb-0 d-block">0</h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>Following</small>
+                                                </li>
+                                            </ul>
+                                            <button id="jsfollowbtn" class="btn btn-primary mr-2 ">Follow</button>
+                                        </div>
+                                    </div>
+                                    <div class="px-4 py-3">
+                                        <h5 class="mb-0">About</h5>
+                                        <div class="p-4 rounded shadow-sm bg-light">
+                                            <p id="jsuserdesc" class="font-italic mb-0"></p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--mainprofile-->
+
+                    </div>
+
+                </div>
+                <!--/.Card-->
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+            <!--Grid column-->
+            <div class="col-lg-12 col-md-6 mb-4">
+
+                <!--Card-->
+                <div class="card">
+
+                    <!-- Card header -->
+                    <div class="card-header">Posts</div>
+
+                    <!--Card content-->
+                    <div class="card-body">
+
+                        <div class="row wow fadeIn posts">
+
+
+                            <!-- INSERT POSTS HERE-->
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!--/.Card-->
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        </div>
+
+
+    </main>
+    <!--Main layout-->
+
+    <!--Footer-->
+    <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+        <div class="pt-4">
+            <p>
+                <strong></strong>
+            </p>
+        </div>
+
+
+        <hr class="my-4">
+
+
+        <div class="pb-4">
+            <p>
+                <strong>2021 © DBChase</strong>
+            </p>
+        </div>
+
+
+
+    </footer>
+    <!--/.Footer-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="../ui/js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="../ui/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="../ui/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../ui/js/mdb.min.js"></script>
+    <!-- Initializations -->
+    <script type="text/javascript" src="../scripts/checklogin.js"></script>
+    <script type="text/javascript" src="../scripts/profiles.js"></script>
+
+    <script type="text/javascript">
+        // Animations initialization
+        new WOW().init();
+    </script>
+
+
+</body>
+
+</html>

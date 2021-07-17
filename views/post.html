@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>asset name</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="../ui/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../ui/css/mdb.min.css" rel="stylesheet">
+    <link href="../ui/css/style.min.css" rel="stylesheet">
+    <style>
+        .card {
+            width: 400px;
+            border: none;
+            border-radius: 20px;
+            padding-left: 10px;
+        }
+
+        .img {
+            padding-left: 10px;
+            padding-right: 10px;
+            height: auto;
+            width: 100px;
+        }
+
+        .wrapper * {
+            width: 100%;
+        }
+        .page-footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+        <div class="container">
+
+            <!-- Brand -->
+            <a class="navbar-brand" href="https://gcl-database.herokuapp.com">
+                <strong>Game CoLab</strong>
+            </a>
+
+            <!-- Collapse -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- Left -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://gcl-database.herokuapp.com">Home
+                            <!-- <span class="sr-only">(current)</span> -->
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://gcl-database.herokuapp.com/browse">Browse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://gcl-database.herokuapp.com/profile/">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://gcl-database.herokuapp.com/editor">Editor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://gcl-database.herokuapp.com/upload">Upload</a>
+                    </li>
+                </ul>
+
+                <!-- Right -->
+                <ul class="navbar-nav nav-flex-icons">
+
+                    <li class="nav-item">
+                        <a id="jsnavlogin" href="https://gcl-database.herokuapp.com/login" class="nav-link border border-light rounded">
+                            <i class="fas fa-sign-in-alt mr-2"></i>Login/Register
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!--Main layout-->
+    <main class="mt-5 pt-4">
+        <div class="container dark-grey-text mt-5">
+
+            <!--Grid row-->
+            <div class="row wow fadeIn">
+
+                <!--Grid column-->
+                <div class="col-md-6 mb-4 wrapper">
+
+                    <img id="jsimg" src="../ui/img/placeholder.png" class="img-fluid" alt="">
+                    <div id="jscan" style="visibility: hidden; display: none;">
+                    </div>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-6 mb-4">
+
+                    <!--Content-->
+                    <div class="p-4">
+
+                        <div class="mb-3" id="taglist">
+
+                        </div>
+
+                        <p id="jsname" class="lead font-weight-bold">Asset Name</p>
+
+                        <p class="lead">
+                            <span id="jsprice">$100</span>
+                        </p>
+
+                        <!--follow creator-->
+                        <div class="container d-flex justify-content-center">
+                            <div class="card p-1">
+                                <div class="media"> <img src="../ui/img/placeholder.png" alt="" class="img">
+                                    <div class="media-body">
+                                        <a id="jscrenamelink" href="">
+                                            <h5 id="jscrename" class="mt-2 mb-0">"name"</h5>
+                                        </a>
+                                        <div class="d-flex flex-row justify-content-between align-text-center"> <small class="text-muted">Creator</small>
+                                            <button id="jsfollowbtn" class="btn btn-primary mr-2 ">Follow</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--follow creator-->
+                        <p class="lead">
+                            <span id="jspoints">You are not logged in</span>
+                        </p>
+                        <form class="d-flex justify-content-left">
+
+                            <button class="btn btn-primary btn-md my-0 p buyitem" id="buybutton" type="button" onclick="buy()">
+                                purchase now
+                            </button>
+                            </a>
+                            <button class="btn btn-primary btn-md my-0 p" id="pbuybutton" type="button">
+                                purchase with points
+                            </button>
+
+                        </form>
+
+                    </div>
+                    <!--Content-->
+
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+            <hr>
+
+            <!--Grid row-->
+            <div class="row d-flex justify-content-center wow fadeIn">
+
+                <!--Grid column-->
+                <div class="col-md-6 text-center">
+
+                    <h4 class="my-4 h4">Description</h4>
+
+                    <p id="jspostdesc">overview of product, like what it does, what its for. </p>
+
+                </div>
+                <!--Grid column-->
+                <!--Grid column-->
+                <div class="col-md-6 text-center">
+
+                    <h4 class="my-4 h4">Specifications</h4>
+                    <p>Total Views:<span id="viewnum"></span></p>
+                    <p>Total Downloads: <span id="downnum"></span></p>
+                    <p>stuff like file size, file type, version, relase date, and other stuff.</p>
+                    <p>maybe a table.</p>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+
+            <!--Grid row-->
+
+            <!--Grid row-->
+
+        </div>
+    </main>
+    <!--Main layout-->
+
+    <!--Footer-->
+    <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+        <div class="pt-4">
+            <p>
+                <strong></strong>
+            </p>
+        </div>
+
+
+        <hr class="my-4">
+
+
+        <div class="pb-4">
+            <p>
+                <strong>2021 © DBChase</strong>
+            </p>
+        </div>
+
+
+
+    </footer>
+    <!--/.Footer-->
+
+    <!-- SCRIPTS -->
+    <script src="../ui/js/three.js"></script>
+    <script src="../ui/js/GLTFLoader.js"></script>
+    <script src="../ui/js/OrbitControls.js"></script>
+
+
+
+
+    </script>
+    <!-- JQuery -->
+    <script type="text/javascript" src="../ui/js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="../ui/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="../ui/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../ui/js/mdb.min.js"></script>
+    <!-- Initializations -->
+    <script type="text/javascript" src="../scripts/checklogin.js"></script>
+    <script type="text/javascript" src="../scripts/post.js"></script>
+    <script type="text/javascript">
+        // Animations initialization
+        new WOW().init();
+    </script>
+
+</body>
+
+</html>
