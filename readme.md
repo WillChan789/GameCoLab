@@ -3,7 +3,7 @@ Site URL: https://gcl-database.herokuapp.com
 
 INSTRUCTIONS
 1. npm install in terminal to get node modules
-2. Host database and change db.js to correct info
+2. Host database and add .env  to correct info
 3. Host server online
 
 COMPONENTS WE ARE USING
